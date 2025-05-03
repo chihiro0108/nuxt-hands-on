@@ -1,7 +1,15 @@
+<script setup lang="ts">
+const gomgom = Math.round(Math.random() * 100);
+const marchenGomgom = gomgom * 10;
 
+</script>
 
 <template>
-  <div>
-    <h1>ルフィ</h1>
-  </div>
+  <p>{{gomgom}}ゴムゴムは{{marchenGomgom}}メルヘンゴムゴム</p>
 </template>
+
+<style>
+p {
+  color: red;
+}
+</style>
