@@ -1,15 +1,17 @@
-<script setup lang="ts">
-const gomgom = Math.round(Math.random() * 100);
-const marchenGomgom = gomgom * 10;
-
-</script>
-
 <template>
-  <p>{{gomgom}}ゴムゴムは{{marchenGomgom}}メルヘンゴムゴム</p>
+  <section>
+    <h1>キャラクター名</h1>
+    <Nami />
+    <MonkeyLuffy />
+  </section>
 </template>
 
+<script setup>
+</script>
+
 <style>
-p {
-  color: red;
+section {
+  border: blue 5px solid;
+  margin: 10px;
 }
 </style>
