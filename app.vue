@@ -1,5 +1,10 @@
 <template>
-  <BaseSection />
+  <header>
+    <h1>ワンピース</h1>
+  </header>
+  <main>
+    <NuxtPage />
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -18,8 +23,24 @@ useState<Map<number, Character>>(
 </script>
 
 <style>
-section {
-  border: blue 5px solid;
-  margin: 10px;
+main {
+  border: black 5px solid;
+  padding: 10px;
+}
+#breadcrumbs {
+  display: inline;
+  list-style-type: none;
+}
+#breadcrumbs ul {
+  padding-left: 0px;
+}
+#breadcrumbs ul li {
+  padding-left: 0px;
+}
+#breadcrumbs ul li::before {
+  content: ">";
+}
+#breadcrumbs ul li:first-child::before {
+  content: none;
 }
 </style>
