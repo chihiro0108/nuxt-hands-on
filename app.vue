@@ -1,15 +1,23 @@
 <template>
-  <header>
-    <h1>ワンピース</h1>
-  </header>
-  <main>
+  <NuxtLayout>
     <NuxtPage />
-  </main>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
 //型定義をインポートする時は　import type
 import type {Character} from "@/interfaces";
+
+const SITE_TITLE = "ワンピース";
+definePageMeta({
+    layout: "character",
+});
+
+useHead({
+    titleTemplate: (titleChunk: string | undefined): string => {
+        return titleChunk != undefined ? `${titleChunk} | ${SITE_TITLE}` : SITE_TITLE;
+    },
+});
 //キャラクターリストデータ
 useState<Map<number, Character>>(
   "characterList", //ステート名

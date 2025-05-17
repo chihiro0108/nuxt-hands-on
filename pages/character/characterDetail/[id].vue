@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import type { Character } from "@/interfaces";
 
+definePageMeta({
+    layout: "character",
+});
+
+const PAGE_TITLE = "キャラクター詳細情報";
+useHead({
+    title: PAGE_TITLE,
+});
+
 const route = useRoute();
 const characterList = useState<Map<number, Character>>("characterList", () => new Map());
 const character = computed(() => {
@@ -11,16 +20,15 @@ const character = computed(() => {
 </script>
 
 <template>
-    <h1>キャラクター設定</h1>
     <nav id="breadcrumbs">
         <ul>
             <li><NuxtLink v-bind:to="{name: 'index'}">TOP</NuxtLink></li>
             <li><NuxtLink v-bind:to="{name: 'character-characterList'}">キャラクターリスト</NuxtLink></li>
-            <li>キャラクター詳細</li>
+            <li>{{ PAGE_TITLE }}</li>
         </ul>
     </nav>
     <section>
-        <h2>キャラクター詳細</h2>
+        <h2>{{ PAGE_TITLE }}</h2>
         <table>
             <tbody>
                 <tr>

@@ -1,19 +1,28 @@
 <script setup lang="ts">
 import type { Character } from "@/interfaces";
+
+definePageMeta({
+    layout: "character",
+});
+
+const PAGE_TITLE = "キャラクターリスト";
+useHead({
+    title: PAGE_TITLE,
+});
+
 const characterList = useState<Map<number, Character>>("characterList", () => new Map());
 </script>
 
 <template>
-    <h1>キャラクター設定</h1>
     <nav id="breadcrumbs">
         <ul>
             <li><NuxtLink v-bind:to="{name: 'index'}">TOP</NuxtLink></li>
-            <li>キャラクター設定</li>
+            <li>{{ PAGE_TITLE }}</li>
         </ul>
     </nav>
     <section>
       <ul>
-        <h2>キャラクターリスト</h2>
+        <h2>{{ PAGE_TITLE }}</h2>
         <p>
           追加は<NuxtLink v-bind:to="{name: 'character-characterAdd'}">こちら</NuxtLink>から
         </p>
